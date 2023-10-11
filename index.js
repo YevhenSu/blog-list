@@ -14,7 +14,10 @@ const blogSchema = new mongoose.Schema({
 const Blog = mongoose.model('Blog', blogSchema)
 
 const mongoUrl = process.env.MONGODB_URI
-mongoose.connect(mongoUrl)
+mongoose
+  .connect(mongoUrl)
+  .then( () => console.log( 'connected to mongodb' ) )
+  .catch( error => console.log( 'error connecting to MongoDB', error.message ) )
 
 app.use(cors())
 app.use(express.json())
