@@ -48,5 +48,5 @@ app.post('/api/blogs', (request, response) => {
 })
 
 app.listen(config.PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  console.log(`Server running on port ${config.PORT}`)
 })
