@@ -4,7 +4,12 @@
   "description": "blog list application, that allows users to save information about interesting blogs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf dist && cd ../../part2/part2-notes-frontend/ && npm run build && cp -r dist/ ../../part3/render-test/",
+    "deploy:full": "npm run build:ui && git add -A && git commit -m uibuild && git push",
+		"lint": "eslint ."
   },
   "keywords": [
     "blog",
@@ -12,5 +17,16 @@
     "application"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+	"dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.3"
+  },
+	"devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-plugin-react": "^7.33.2",
+    "nodemon": "^3.0.1"
+  }
 }
