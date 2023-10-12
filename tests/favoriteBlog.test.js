@@ -12,7 +12,6 @@ describe('favorite blog', () => {
     })
   })
 
-
   test('when list has many blogs, equals the likes of that', () => {
     const result = listHelper.favoriteBlog(listWithManyBlogs)
     expect(result).toEqual({
