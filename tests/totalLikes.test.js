@@ -12,7 +12,7 @@ describe('total likes', () => {
     }
   ]
 
-  const blogs = [
+  const listWithManyBlogs = [
     {
       _id: '5a422a851b54a676234d17f7',
       title: 'React patterns',
@@ -66,5 +66,11 @@ describe('total likes', () => {
   test('when list has only one blog, equals the likes of that', () => {
     const result = listHelper.totalLikes(listWithOneBlog)
     expect(result).toBe(5)
+  })
+
+
+  test('when list has many blogs, equals the likes of that', () => {
+    const result = listHelper.totalLikes(listWithManyBlogs)
+    expect(result).toBe(36)
   })
 })
